@@ -11,7 +11,6 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama
-from tts import TextToSpeechService
 import torch
 import pyttsx3
 import pyaudio
@@ -50,9 +49,9 @@ if mode == PRESET_QUESTIONS:
     print("Using preset questions")
 
     template = """
-        You are Misty, a empathetic listener. You are speaking to a person. They are telling you a story about an influential person in her life.
+        You are Misty, a empathetic listener. You are speaking to Dana. She is telling you a story about an influential person in her life.
 
-        You ask open-ended questions to encourage them to share more. 
+        You ask open-ended questions to encourage her to share more. 
         Your responses should be less than 40 words. 
         Your response must be one of the following:
         - How did that make you feel?
