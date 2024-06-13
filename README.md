@@ -8,7 +8,7 @@ To setup:
 - run `ollama pull gemma:2b-instruct-v1.1-q4_K_M`
     - Replace `gemma:2b-instruct-v1.1-q4_K_M` with any other model from Ollama if desired, just requires a one line change in app.py where the model is setup
 - run `ollama serve`
-- run `pip install requirements.txt`
+- run `pip install -r requirements.txt`
 
 To run:
 - in text only mode for debugging `python app.py -1`
