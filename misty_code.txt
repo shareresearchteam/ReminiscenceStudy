@@ -1,0 +1,16 @@
+from mistyPy.Robot import Robot
+import random
+import time
+misty = Robot()
+
+misty.change_led(0,0,255)
+
+
+while True:
+    misty.move_head(-10, 30 ,0 ,100)
+    time_wait = random.randint(7,15)
+    time.sleep(time_wait)
+    misty.move_head(0,0,0,100)
+    time_wait = random.randint(7,15)
+    time.sleep(time_wait)
+
