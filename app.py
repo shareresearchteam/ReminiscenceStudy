@@ -242,7 +242,7 @@ def make_text_to_speech(text):
         text (str): the text to be converted to speech.
     '''
     tempPath = "temp.wav"
-    tts.save_to_file(text , tempPath)
+    tts.save_to_file(text, tempPath)
     tts.runAndWait()
     wf = wave.open(tempPath, 'rb')
     # open stream based on the wave object which has been input.
@@ -275,12 +275,13 @@ class PrintLogger:
     def write(self, string, manual=False):
         '''
         Writes the string to the console and the log file.
+
+        Args: string (str): the string being written
+              manual (bool): if true, write only to the log, not the console
         '''
         if not manual:
             self.console.print(string)
-            self.logger.info(string)
-        else:
-            self.logger.info(string)
+        self.logger.info(string)
 
     def flush(self):
         # i actually don't know what this does and I'm too scared to remove it
@@ -346,7 +347,8 @@ if __name__ == "__main__":
                             audio.terminate()
                             exit()
                     else:
-                        logger.write("[yellow]You: ")
+                        text = input("You: ")
+                        logger.write("[yellow]You: "+text,True)
 
 
                     if mode != TEXT_ONLY: # if in audio mode, wait 3 seconds and play filler sound
